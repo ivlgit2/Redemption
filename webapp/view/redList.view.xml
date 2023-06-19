@@ -1,0 +1,124 @@
+<mvc:View controllerName="bri.Redemption.controller.redList" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:t="sap.ui.table" xmlns:fb="sap.ui.comp.filterbar" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	    
+	<!--    <mvc:View controllerName="bri.open_account.controller.openacntlist" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"-->
+	<!--xmlns:fb="sap.ui.comp.filterbar" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:t="sap.ui.table">-->
+	    	
+	<Shell id="shell">
+		<Page id="page" title="{i18n>Redemption}">
+			<content>
+				<l:VerticalLayout width="100%" class="filterbarBackgroundStyle">
+					<fb:FilterBar id="filterBar" header="" reset="onReset" search="onSearch" clear="onClear" cancel="onCancel"
+						filtersDialogClosed="onFiltersDialogClosed" showRestoreButton="true" showClearButton="true">
+						<fb:filterGroupItems>
+							<fb:FilterGroupItem groupName="__$INTERNAL$" name="A" label="Track No from" partOfCurrentVariant="true" visibleInFilterBar="true">
+								<fb:control>
+									<Input id="trackfrom" type="Text"  textFormatMode="Key" placeholder="Track No From" showSuggestion="true" showValueHelp="true"
+										valueHelpRequest="handleValueHelptrknofrm" suggestionItemSelected="suggestionItemSelected" valueLiveUpdate="true"></Input>
+								</fb:control>
+							</fb:FilterGroupItem>
+							<fb:FilterGroupItem groupName="__$INTERNAL$" name="B" label="Track No To" partOfCurrentVariant="true" visibleInFilterBar="true">
+								<fb:control>
+									<Input id="trackto" type="Text" textFormatMode="Key"  placeholder="Track No To" showSuggestion="true" showValueHelp="true"
+										valueHelpRequest="handleValueHelptrknofrm" suggestionItemSelected="suggestionItemSelected" valueLiveUpdate="true"></Input>
+								</fb:control>
+							</fb:FilterGroupItem>
+							<fb:FilterGroupItem groupName="__$INTERNAL$" name="C" label="Company Code" partOfCurrentVariant="true" visibleInFilterBar="true">
+								<fb:control>
+									<Input id="copmcod" type="Text" textFormatMode="Key"  placeholder="Company Code" showSuggestion="true" showValueHelp="true"
+										valueHelpRequest="handleValueHelpcomp"  suggestionItemSelected="suggestionItemSelected" valueLiveUpdate="true"></Input>
+								</fb:control>
+							</fb:FilterGroupItem>
+							<!-- <fb:FilterGroupItem groupName="__$INTERNAL$" name="D" label="Issue Authority" partOfCurrentVariant="true" visibleInFilterBar="true">
+								<fb:control>
+									<Input id="issuea" type="Text" textFormatMode="Key"  placeholder="Issue Authority" showSuggestion="true" showValueHelp="true"
+										valueHelpRequest="handleValueHelpissue" suggestionItemSelected="suggestionItemSelected" valueLiveUpdate="true"></Input>
+								</fb:control>
+							</fb:FilterGroupItem> -->
+						</fb:filterGroupItems>
+					</fb:FilterBar>
+					<t:Table selectionMode="None" visible="false" visibleRowCount="6" id="trackTable" rows="{tableLists>/results}">
+						<t:columns>
+							<t:Column>
+								<Label text="Internal Track No"/>
+								<t:template>
+									<Link text="{tableLists>docno}" press="handleLinkPress"/>
+								</t:template>
+							</t:Column>
+							<t:Column >
+								<Label text="Company"/>
+								<t:template>
+									<Text text="{tableLists>bukrs}"/>
+								</t:template>
+							</t:Column>
+							<t:Column >
+								<Label text="Benefit Type"/>
+								<t:template>
+									<Text text="{tableLists>bnftyp}"/>
+								</t:template>
+							</t:Column>
+							<!--<t:Column >-->
+							<!--	<Label text="Total Amount"/>-->
+							<!--	<t:template>-->
+							<!--		<Text text="{tableLists>totinvval}"/>-->
+							<!--	</t:template>-->
+							<!--</t:Column>-->
+							<!--<t:Column >-->
+							<!--	<Label text="Amount Paid"/>-->
+							<!--	<t:template>-->
+							<!--		<Text text="{tableLists>totamtpaid}"/>-->
+							<!--	</t:template>-->
+							<!--</t:Column>-->
+							<!--<t:Column >-->
+							<!--	<Label text="Balance Amount"/>-->
+							<!--	<t:template>-->
+							<!--		<Text text="{tableLists>balance}"/>-->
+							<!--	</t:template>-->
+							<!--</t:Column>-->
+							<!--<t:Column >-->
+							<!--	<Label text="Payment Date"/>-->
+							<!--	<t:template>-->
+							<!--		<Text text="{ path: 'tableLists>pay_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>-->
+									<!--<Text text="{tableLists>pay_date}"/>-->
+							<!--	</t:template>-->
+							<!--</t:Column>-->
+							<!--<t:Column >-->
+							<!--	<Label text="Incoterms"/>-->
+							<!--	<t:template>-->
+							<!--		<Text text="{tableLists>inco1}"/>-->
+							<!--	</t:template>-->
+							<!--</t:Column>-->
+							<!--<t:Column >-->
+							<!--	<Label text="Due date"/>-->
+							<!--	<t:template>-->
+							<!--		<Text text="{ path: 'tableLists>due_date', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>-->
+									<!--<Text text="{tableLists>due_date}"/>-->
+							<!--	</t:template>-->
+							<!--</t:Column>-->
+						</t:columns>
+						<t:footer>
+							<Toolbar>
+								<ToolbarSpacer/>
+								<Title id="table_footer" text="Total Records:"></Title>
+							</Toolbar>
+						</t:footer>
+					</t:Table>
+				</l:VerticalLayout>
+			</content>
+			<footer>
+				<Toolbar>
+					<ToolbarSpacer/>
+					<Button type="Accept" text="Create New" icon="sap-icon://write-new" press="onPressCreate"/>
+					<Button type="Accept" text="Download" id="downloadBtn" icon="sap-icon://download" press="exportToExcel" visible="false"/>
+				</Toolbar>
+			</footer>
+		</Page>
+	</Shell>
+</mvc:View>
+<!--<footer>-->
+<!--	<Toolbar>-->
+<!--		<ToolbarSpacer/>-->
+<!--		<Button type="Accept" text="Create New" icon="sap-icon://write-new" press="onPressCreate"/>-->
+<!--<Button type="Accept" text="Download" id="downloadBtn" icon="sap-icon://download" press="exportToExcel" visible="false"/>-->
+<!--	</Toolbar>-->
+<!--</footer>-->

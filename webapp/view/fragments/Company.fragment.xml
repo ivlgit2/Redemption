@@ -1,0 +1,7 @@
+
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog title="Company Name" class="sapUiPopupWithPadding" items="{Omodel_cmn>/company_code}" liveChange="_handleValueHelpSearchCompany"
+		confirm="_handleValueHelpCloseCompany" cancel="_handleValueHelpCloseCompany">
+		<StandardListItem iconDensityAware="false" iconInset="false" title="{Omodel_cmn>bukrs}" description="{Omodel_cmn>butxt}"/>   
+	</SelectDialog>
+</core:FragmentDefinition>

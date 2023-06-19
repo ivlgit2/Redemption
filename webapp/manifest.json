@@ -1,0 +1,172 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "bri.Redemption",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponentForManifest",
+            "version": "0.0.0"
+        },
+        "dataSources": {
+            "CMN_SERVICES": {
+                "uri": "/sap/opu/odata/BRI/CMN_SERVICES/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/metadata.xml"
+                }
+            },
+            "IBS_BENEFIT_SCHEME": {
+                "uri": "/sap/opu/odata/BRI/IBS_BENEFIT_SCHEME/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/IBS_BENEFIT_SCHEME/metadata.xml"
+                }
+            }
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "bri-Redemption-inbound": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "redemption",
+                    "action": "Display",
+                    "title": "{{flpTitle}}",
+                    "subTitle": "{{flpSubtitle}}",
+                    "icon": "sap-icon://accounting-document-verification"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "rootView": {
+            "viewName": "bri.Redemption.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        },
+        "dependencies": {
+            "minUI5Version": "1.65.6",
+            "libs": {
+                "sap.ui.layout": {},
+                "sap.ui.core": {},
+                "sap.m": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "bri.Redemption.i18n.i18n"
+                }
+            },
+            "Omodel_cmn": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "CMN_SERVICES",
+                "preload": true
+            },
+            "Trk_model": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "IBS_BENEFIT_SCHEME",
+                "preload": true
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "bri.Redemption.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "redList",
+                    "pattern": "",
+                    "controlId": "app",
+                    "view": "redList"
+                },
+                {
+                    "name": "redDis",
+                    "pattern": "redDis/{mode}/{docno}/{bnftyp}",
+                    "target": "redDis"
+                },
+                {
+                    "name": "redCrt",
+                    "pattern": "redCrt/{mode}",
+                    "view": "redCrt",
+                    "controlId": "app",
+                    "target": "redCrt"
+                }
+            ],
+            "targets": {
+                "TargetApp": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "app",
+                    "viewName": "App"
+                },
+                "redDis": {
+                    "viewType": "XML",
+                    "viewName": "redDis"
+                },
+                "redCrt": {
+                    "viewType": "XML",
+                    "viewName": "redCrt"
+                },
+                "redList": {
+                    "viewType": "XML",
+                    "viewName": "redList"
+                }
+            }
+        }
+    }
+}

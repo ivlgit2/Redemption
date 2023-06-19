@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog title="Issue Authority" class="sapUiPopupWithPadding" items="{searchHelpModel>/results}" liveChange="_handleValueHelpSearchissuea"
+		confirm="_handleValueHelpCloseissue" cancel="_handleValueHelpCloseissue">
+		<StandardListItem iconDensityAware="false" iconInset="false" title="{searchHelpModel>bsno}" />
+	</SelectDialog>
+</core:FragmentDefinition>
+
