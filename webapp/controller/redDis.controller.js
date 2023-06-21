@@ -69,7 +69,7 @@ sap.ui.define([
 
 				// } else if (_self.oSelectedItem == "Clubbinf DFL") {  
 
-			} else {}
+			} else { }
 
 			_self.getView().byId("ContChange").setTitle(_self.getView().getModel("i18n").getResourceBundle().getText(
 				"Redemption Details for Tracking Number") + " " + ":" + " " + _self.docno);
@@ -217,6 +217,8 @@ sap.ui.define([
 
 			_self.excImp();
 			_self.Installation();
+			_self.Aro();
+
 		},
 		excImp: function () {
 			debugger;
@@ -233,7 +235,7 @@ sap.ui.define([
 							results: []
 						};
 						_self.tempjsonExcimp.results = _self.tempjsonExcimp.results.concat(oData.results);
-						 //_self.tempjsonExcimp.results = _self.tempjsonExcimp.results.filter(a => a.trkno == _self.trkno);
+						//_self.tempjsonExcimp.results = _self.tempjsonExcimp.results.filter(a => a.trkno == _self.trkno);
 
 						var oModelDataExcimp = new sap.ui.model.json.JSONModel();
 						oModelDataExcimp.setData(_self.tempjsonExcimp);
@@ -334,16 +336,43 @@ sap.ui.define([
 			});
 
 		},
+		Aro: function(){
+			debugger;
+			var _self = this;
+			_self.oTrk_Model.read("/xBRIxI_IBSITMASTPO", {
+				success: function (oData) {
+					_self.getView().byId("idItemTtable4").setVisible(true);
+					console.log(oData);
+					if (oData.results.length <= 0) {
+						MessageBox.error("No Matching Result(s) Found for the Filter Aro Invalidation");
+					} else {
+						_self.tempjsonAro = {
+							results: []
+						};
+						_self.tempjsonAro.results = _self.tempjsonAro.results.concat(oData.results);
+						_self.tempjsonAro.results = _self.tempjsonAro.results.filter(a => a.trkno == _self.trkno);
+
+						var oModelDataAro = new sap.ui.model.json.JSONModel();
+						oModelDataAro.setData(_self.tempjsonAro);
+						_self.getView().setModel(oModelDataAro, "tableAro");
+
+					}
+				},
+				error: function (error) {
+					MessageBox.error("Something Went Wrong . Please Try again Later");
+				}
+			});
+		},
 		DecCheckbcd: function (oEvent) {
 			debugger;
 			// var rowval = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.mParameters.newValue;
 
-			if ((val == "") || (val == " ")) {
-				// if (val == " ") {
-				MessageBox.error("Cant make BDC filed as null");
-				return;
-			}
+			// if ((val == "") || (val == " ")) {
+			// 	// if (val == " ") {
+			// 	MessageBox.error("Cant make BDC filed as null");
+			// 	return;
+			// }
 
 			var val2 = isNaN(val);
 			if ((val2) == true) {
@@ -365,11 +394,11 @@ sap.ui.define([
 			// var rowval = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.mParameters.newValue;
 
-			if ((val == "") || (val == " ")) {
-				// if (val == " ") {
-				MessageBox.error("Cant make BDC filed as null");
-				return;
-			}
+			// if ((val == "") || (val == " ")) {
+			// 	// if (val == " ") {
+			// 	MessageBox.error("Cant make BDC filed as null");
+			// 	return;
+			// }
 
 			var val2 = isNaN(val);
 			if ((val2) == true) {
@@ -391,11 +420,11 @@ sap.ui.define([
 			// var rowval = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.mParameters.newValue;
 
-			if ((val == "") || (val == " ")) {
-				// if (val == " ") {
-				MessageBox.error("Cant make BDC filed as null");
-				return;
-			}
+			// if ((val == "") || (val == " ")) {
+			// 	// if (val == " ") {
+			// 	MessageBox.error("Cant make BDC filed as null");
+			// 	return;
+			// }
 
 			var val2 = isNaN(val);
 			if ((val2) == true) {
@@ -417,11 +446,11 @@ sap.ui.define([
 			// var rowval = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.mParameters.newValue;
 
-			if ((val == "") || (val == " ")) {
-				// if (val == " ") {
-				MessageBox.error("Cant make BDC filed as null");
-				return;
-			}
+			// if ((val == "") || (val == " ")) {
+			// 	// if (val == " ") {
+			// 	MessageBox.error("Cant make BDC filed as null");
+			// 	return;
+			// }
 
 			var val2 = isNaN(val);
 			if ((val2) == true) {
@@ -443,11 +472,11 @@ sap.ui.define([
 			// var rowval = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.mParameters.newValue;
 
-			if ((val == "") || (val == " ")) {
-				// if (val == " ") {
-				MessageBox.error("Cant make BDC filed as null");
-				return;
-			}
+			// if ((val == "") || (val == " ")) {
+			// 	// if (val == " ") {
+			// 	MessageBox.error("Cant make BDC filed as null");
+			// 	return;
+			// }
 
 			var val2 = isNaN(val);
 			if ((val2) == true) {
@@ -469,11 +498,11 @@ sap.ui.define([
 			// var rowval = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.mParameters.newValue;
 
-			if ((val == "") || (val == " ")) {
-				// if (val == " ") {
-				MessageBox.error("Cant make BDC filed as null");
-				return;
-			}
+			// if ((val == "") || (val == " ")) {
+			// 	// if (val == " ") {
+			// 	MessageBox.error("Cant make BDC filed as null");
+			// 	return;
+			// }
 
 			var val2 = isNaN(val);
 			if ((val2) == true) {
@@ -495,11 +524,11 @@ sap.ui.define([
 			// var rowval = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.mParameters.newValue;
 
-			if ((val == "") || (val == " ")) {
-				// if (val == " ") {
-				MessageBox.error("Cant make BDC filed as null");
-				return;
-			}
+			// if ((val == "") || (val == " ")) {
+			// 	// if (val == " ") {
+			// 	MessageBox.error("Cant make BDC filed as null");
+			// 	return;
+			// }
 
 			var val2 = isNaN(val);
 			if ((val2) == true) {
@@ -521,11 +550,11 @@ sap.ui.define([
 			// var rowval = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.mParameters.newValue;
 
-			if ((val == "") || (val == " ")) {
-				// if (val == " ") {
-				MessageBox.error("Cant make BDC filed as null");
-				return;
-			}
+			// if ((val == "") || (val == " ")) {
+			// 	// if (val == " ") {
+			// 	MessageBox.error("Cant make BDC filed as null");
+			// 	return;
+			// }
 
 			var val2 = isNaN(val);
 			if ((val2) == true) {
@@ -591,7 +620,7 @@ sap.ui.define([
 					var NewDateform = value;
 				} else if (value.indexOf("T00:00:00")) {
 					return value;
-				} else {}
+				} else { }
 				var mnth = ("0" + (NewDateform.getMonth() + 1)).slice(-2);
 				var day = ("0" + NewDateform.getDate()).slice(-2);
 				var output = [NewDateform.getFullYear(), mnth, day].join("-") + "T00:00:00";
@@ -770,11 +799,21 @@ sap.ui.define([
 			this.getView().setModel(oModelDataEncl, "tableEncl");
 
 		},
-		ChangeSchmeIssue: function (oEvent) {
+		ChangeDocdate: function (oEvent) {
 			debugger;
+			// var currentRow = oEvent.getSource().getParent().getIndex();
+			// var val = oEvent.getSource().getValue();
+			// this.temjsonEncl.results[currentRow].doc_dt = val;
+			// this.getView().getModel("tableEncl").refresh();
+
 			var currentRow = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.getSource().getValue();
-			this.temjsonEncl.results[currentRow].doc_dt = val;
+			if ((val == "") || (val == '')) {
+				this.temjsonEncl.results[currentRow].doc_dt = null;
+			} else {
+				this.temjsonEncl.results[currentRow].doc_dt = val;
+			}
+
 			this.getView().getModel("tableEncl").refresh();
 		},
 		InsertSlno: function (oEvent) {
@@ -822,6 +861,37 @@ sap.ui.define([
 
 			///////////////////////////////////*****header*****//////////////////////////////////////////
 			/////////////////////////*****customdet///////////////
+			for (var i = 0; i < _self.temjsonCust.results.length; i++) {
+				if ((_self.temjsonCust.results[i].bcd == "") || (_self.temjsonCust.results[i].bcd == '')) {
+					_self.temjsonCust.results[i].bcd = null;
+				}
+				if ((_self.temjsonCust.results[i].sws == "") || (_self.temjsonCust.results[i].sws == '')) {
+					_self.temjsonCust.results[i].sws = null;
+				}
+				if ((_self.temjsonCust.results[i].igst == "") || (_self.temjsonCust.results[i].igst == '')) {
+					_self.temjsonCust.results[i].igst = null;
+				}
+				if ((_self.temjsonCust.results[i].intrst_paid == "") || (_self.temjsonCust.results[i].intrst_paid == '')) {
+					_self.temjsonCust.results[i].intrst_paid = "0.00";
+				}
+				if ((_self.temjsonCust.results[i].cust_dty_paid == "") || (_self.temjsonCust.results[i].cust_dty_paid == '')) {
+					_self.temjsonCust.results[i].cust_dty_paid = "0.00";
+				}
+				if ((_self.temjsonCust.results[i].comp_fee_paid == "") || (_self.temjsonCust.results[i].comp_fee_paid == '')) {
+					_self.temjsonCust.results[i].comp_fee_paid = "0.00";
+				}
+				if ((_self.temjsonCust.results[i].other_charges == "") || (_self.temjsonCust.results[i].other_charges == '')) {
+					_self.temjsonCust.results[i].other_charges = "0.00";
+				}
+				if ((_self.temjsonCust.results[i].intrst_amt == "") || (_self.temjsonCust.results[i].intrst_amt == '')) {
+					_self.temjsonCust.results[i].intrst_amt = "0.00";
+				}
+				if ((_self.temjsonCust.results[i].duty_paid_dt == "") || (_self.temjsonCust.results[i].duty_paid_dt == '')) {
+					_self.temjsonCust.results[i].duty_paid_dt = null;
+				}
+
+
+			}
 			for (var i = 0; i < _self.temjsonCust.results.length; i += 1) {
 				delete _self.temjsonCust.results[i].__metadata;
 				delete _self.temjsonCust.results[i].waers;
@@ -830,18 +900,33 @@ sap.ui.define([
 				delete _self.temjsonCust.results[i].chrgkyrs;
 				_self.trkno = _self.temjsonCust.results[i].trkno;
 				_self.oTrk_Model.update("/xBRIxI_IMP_TL_RDCP(docno='" + _self.docno + "',trkno='" + _self.trkno + "')", _self.temjsonCust.results[
-						i], mParameters
+					i], mParameters
 
 				);
 			}
 			//////////////////////////////*****customdet//////////////////////////////////////////
 			//////////////////////////////*****redemption//////////////////////////////////////////
+			for (var i = 0; i < _self.temjsonRed.results.length; i++) {
+				if ((_self.temjsonRed.results[i].red_date == "") || (_self.temjsonRed.results[i].red_date == '')) {
+					_self.temjsonRed.results[i].red_date = null;
+				}
+				if ((_self.temjsonRed.results[i].bnd_lut_clsdt == "") || (_self.temjsonRed.results[i].bnd_lut_clsdt == '')) {
+					_self.temjsonRed.results[i].bnd_lut_clsdt = null;
+				}
+				if ((_self.temjsonRed.results[i].license_clsdt == "") || (_self.temjsonRed.results[i].license_clsdt == '')) {
+					_self.temjsonRed.results[i].license_clsdt = null;
+				}
+				if ((_self.temjsonRed.results[i].dgft_sub_dt == "") || (_self.temjsonRed.results[i].dgft_sub_dt == '')) {
+					_self.temjsonRed.results[i].dgft_sub_dt = null;
+				}
+			}
+
 			for (var i = 0; i < _self.temjsonRed.results.length; i += 1) {
 				delete _self.temjsonRed.results[i].__metadata;
 
 				_self.trkno = _self.temjsonRed.results[i].trkno;
 				_self.oTrk_Model.update("/xBRIxI_IMP_TL_REDT(docno='" + _self.docno + "',trkno='" + _self.trkno + "')", _self.temjsonRed.results[
-						i], mParameters
+					i], mParameters
 
 				);
 
@@ -877,8 +962,8 @@ sap.ui.define([
 					_self.temjsonEncl.results[i].trkno = _self.trkno;
 					_self.oTrk_Model.update("/xBRIxI_IMP_TL_RDOC(docno='" + _self.docno + "',trkno='" + _self.trkno + "',sl_no='" + _self.temjsonEncl
 						.results[
-							i].sl_no + "')", _self.temjsonEncl.results[
-							i], mParameters
+						i].sl_no + "')", _self.temjsonEncl.results[
+					i], mParameters
 
 					);
 				}

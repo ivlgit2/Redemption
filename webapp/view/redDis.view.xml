@@ -22,91 +22,218 @@
 										<core:Title/>
 										<Label/>
 										<Label text="Company Code" id="CompnyCode"/>
-										<Input value="{tablehead>/bukrs}" enabled="false" id="bukrs" width="223px"/>
+										<Input value="{tablehead>/bukrs}" enabled="false" id="bukrs" width="223px"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bukrs_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bukrs_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bukrs/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bukrs_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<!-- <Text text="{nndoHeaderDetail>/consigncod}" id="compdes"></Text> -->
 										<Label text="Issue Date"/>
 										<DatePicker id="issdt" value=" {path: 'tablehead>/issdt',formatter:'LICE.Formatter.convertToSAPdate'}" valueFormat="yyyy-MM-ddT00:00:00"
-											displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+											displayFormat="dd/MM/yyyy"  enabled="false"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/issdt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/issdt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/issdt_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/issdt_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<!--<Input value="{tablehead>/issdt}" id="issdt" enabled="false"/>-->
 										<Label text="Scheme Issue Authority"/>
-										<Input value="{tablehead>/issauth}" id="issauth" maxLength="30" width="110px" enabled="false"/>
+										<Input value="{tablehead>/issauth}" id="issauth" maxLength="30" width="110px" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/issauth_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/issauth_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/issauth/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/issauth_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Input value="" id="bnkrefno1" maxLength="30" width="107px" enabled="false"/>
 										<Label text="File Number"/>
-										<Input value="{tablehead>/fileno}" id="fileno" maxLength="30" enabled="false"/>
+										<Input value="{tablehead>/fileno}" id="fileno" maxLength="30" enabled="false"
+										equired="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/fileno_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/fileno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/fileno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/fileno_visible',formatter: 'LICE.Formatter.setVisible'}" />
 										<Label text="File Date"/>
 										<DatePicker id="filedt" value=" {path: 'tablehead>/filedt',formatter:'LICE.Formatter.convertToSAPdate'}" valueFormat="yyyy-MM-ddT00:00:00"
-											displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+											displayFormat="dd/MM/yyyy"  enabled="false"
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/filedt_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/filedt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/filedt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/filedt_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<!--<DatePicker id="filedt" value=" {path: 'tablehead>/filedt ',formatter:'LICE.Formatter.convertToSAPdate'}" valueFormat="yyyy-MM-ddT00:00:00"-->
-										<!--	displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>-->
+										<!--	displayFormat="dd/MM/yyyy"  enabled="false"/>-->
 										<Label text="Norms Type"/>
-										<Input value="{tablehead>/norms_type}" enabled="false"/>
+										<Input value="{tablehead>/norms_type}" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bukrs_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bukrs_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bukrs/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bukrs_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="HQ File Number"/>
-										<Input value="{tablehead>/hq_fileno}" id="hq_fileno" enabled="{State>/enable}" maxLength="30"/>
+										<Input value="{tablehead>/hq_fileno}" id="hq_fileno" enabled="{State>/enable}" maxLength="30"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/hq_fileno_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/hq_fileno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/hq_fileno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/hq_fileno_visible',formatter: 'LICE.Formatter.setVisible'}" />
 										<!--<Input id="banka" type="Text" textFormatMode="Key" showSuggestion="true" showValueHelp="true" valueHelpRequest="handleValueHelpBnfBank"-->
 										<!--	suggestionItemSelected="suggestionItemSelected" valueLiveUpdate="true"></Input>-->
 										<Label text="LIC Imp Validity"/>
-										<Input value="{tablehead>impval}" id="impval" enabled="false" maxLength="25"/>
+										<Input value="{tablehead>impval}" id="impval" enabled="false" maxLength="25"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/impval_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/impval_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/impval/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/impval_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="First imp Revalidation Date"/>
 										<DatePicker id="ifirstextdt" value=" {path: 'tablehead>/ifirstextdt ',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy"  enabled="false"
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/ifirstextdt_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/ifirstextdt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/ifirstextdt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/ifirstextdt_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="Second imp Revalidation Date"/>
 										<DatePicker id="isecondextdt" value=" {path: 'tablehead>/isecondextdt',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" enabled="false"
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/isecondextdt_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/isecondextdt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/isecondextdt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/isecondextdt_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="Cust Notification Number"/>
-										<Input value="{tablehead>/cust_notif_no}" id="cust_notif_no" type="Number" enabled="false" liveChange="intcheck"/>
+										<Input value="{tablehead>/cust_notif_no}" id="cust_notif_no" type="Number" enabled="false" liveChange="intcheck"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/cust_notif_no_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/cust_notif_no_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											visible="{path: 'visible_Model>/cust_notif_no_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<core:Title/>
 										<Label text="Cust Notification Date"/>
 										<DatePicker id="revw" value=" {path: 'tablehead>/cust_notif_dt',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy"  enabled="false"
+											 required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bukrs_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bukrs_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bukrs/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bukrs_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="EO Fulfilled % qty wise"/>
-										<Input value="{tablehead>/eo_qty_percent}" id="totamtpaid" enabled="false" liveChange="intcheck"/>
+										<Input value="{tablehead>/eo_qty_percent}" id="totamtpaid" enabled="false" liveChange="intcheck"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/eo_qty_percent_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/eo_qty_percent_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/eo_qty_percent/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/eo_qty_percent_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="EO Fulfilled % value wise"/>
-										<Input value="{tablehead>/eo_val_percent}" id="eo_val_percent1" enabled="false" liveChange="intcheck"/>
+										<Input value="{tablehead>/eo_val_percent}" id="eo_val_percent1" enabled="false" liveChange="intcheck"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/eo_val_percent_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/eo_val_percent_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/eo_val_percent/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/eo_val_percent_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="Value Addition Percentage"/>
-										<Input value="{tablehead>/actual_valadd}" enabled="false" liveChange="intcheck"/>
+										<Input value="{tablehead>/actual_valadd}" enabled="false" liveChange="intcheck"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/actual_valadd_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/actual_valadd_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/actual_valadd/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/actual_valadd_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="Actual Value Addition"/>
-										<Input value="{tablehead>/valadd}" id="valadd" enabled="false" liveChange="intcheck"/>
+										<Input value="{tablehead>/valadd}" id="valadd" enabled="false" liveChange="intcheck"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/valadd_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/valadd_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/valadd/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/valadd_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="SION number if DFL/DFIA"/>
-										<Input value="{tablehead>/siono}" id="siono" enabled="false" liveChange="intcheck"/>
+										<Input value="{tablehead>/siono}" id="siono" enabled="false" liveChange="intcheck"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/siono_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/siono_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/siono/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/siono_visible',formatter: 'LICE.Formatter.setVisible'}" />
 										<Label text="Export Obligation End Date"/>
 										<DatePicker id="expenddt" value=" {path: 'tablehead>/expenddt ',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy"  enabled="false"
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/expenddt_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/expenddt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/expenddt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/expenddt_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="First Exp Revalidation Date"/>
 										<DatePicker id="efirstextdt" value=" {path: 'tablehead>/efirstextdt ',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy"  enabled="false"
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/efirstextdt_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/efirstextdt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/efirstextdt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/efirstextdt_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="Second Exp Revalidation Date"/>
 										<DatePicker id="esecondextdt" value=" {path: 'tablehead>/esecondextdt ',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy"  enabled="false"
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/esecondextdt_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/esecondextdt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/esecondextdt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/esecondextdt_visible',formatter: 'LICE.Formatter.setVisible'}" />
 										<Label text="Export Product Group"/>
-										<Input value="{tablehead>/prdgrp}" id="prdgrp" enabled="false"/>
+										<Input value="{tablehead>/prdgrp}" id="prdgrp" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/prdgrp_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/prdgrp_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/prdgrp/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/prdgrp_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="CIF Value in INR"/>
-										<Input value="{tablehead>/totciflc}" id="totciflc" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/totciflc}" id="totciflc" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/totciflc_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/totciflc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/totciflc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/totciflc_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Text text="INR" id="com11pdes"></Text>
 										<core:Title/>
 										<Label text="CIF Value in FC"/>
-										<Input value="{tablehead>/totciffc}" id="totciffc" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/totciffc}" id="totciffc" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/totciffc_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/totciffc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/totciffc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/totciffc_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Text text="USD" id="c1ompdes"></Text>
 										<Label text="Exp Obli FOB Value in INR"/>
-										<Input value="{tablehead>/obliglc}" id="obliglc" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/obliglc}" id="obliglc" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/obliglc_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/obliglc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/obliglc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/obliglc_visible',formatter: 'LICE.Formatter.setVisible'}" />
 										<Label text="Exp Obli FOB Value in FC"/>
-										<Input value="{tablehead>/obligfc}" id="obligfc" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/obligfc}" id="obligfc" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/obligfc_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/obligfc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/obligfc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/obligfc_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="Obli fixed as per LIC"/>
-										<Input value="{tablehead>/oblig_fix_lic}" id="oblig_fix_lic" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/oblig_fix_lic}" id="oblig_fix_lic" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/oblig_fix_lic_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/oblig_fix_lic_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/oblig_fix_lic/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/oblig_fix_lic_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="Obli as per Act Imp"/>
-										<Input value="{tablehead>/oblig_lic_imp}" id="oblig_lic_imp" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/oblig_lic_imp}" id="oblig_lic_imp" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/oblig_lic_imp_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/oblig_lic_imp_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/oblig_lic_imp/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/oblig_lic_imp_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="Imp CIF value as License USD"/>
-										<Input value="{tablehead>/act_imp_cif_usd}" id="act_imp_cif_usd" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/act_imp_cif_usd}" id="act_imp_cif_usd" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/act_imp_cif_usd_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/act_imp_cif_usd_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/act_imp_cif_usd/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/act_imp_cif_usd_visible',formatter: 'LICE.Formatter.setVisible'}" />
 										<Text text="USD" id="com1pdes"></Text>
 										<Label text="Imp CIF value as License INR"/>
-										<Input value="{tablehead>/imp_cif_val}" id="imp_cif_val" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/imp_cif_val}" id="imp_cif_val" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/imp_cif_val_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/imp_cif_val_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/imp_cif_val/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/imp_cif_val_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Text text="INR" id="comp1des"></Text>
 										<Label text="Act Imp CIF val as per lic"/>
-										<Input value="{tablehead>/act_imp_cif_val}" id="act_imp_cif_val" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/act_imp_cif_val}" id="act_imp_cif_val" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/act_imp_cif_val_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/act_imp_cif_val_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/act_imp_cif_val/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/act_imp_cif_val_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="Actual FOB USD"/>
-										<Input value="{tablehead>/act_fob_fc}" id="act_fob_fc" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/act_fob_fc}" id="act_fob_fc" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/act_fob_fc_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/act_fob_fc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/act_fob_fc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/act_fob_fc_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Text text="USD" id="compd1es"></Text>
 										<Label text="Actual FOB INR"/>
-										<Input value="{tablehead>/act_fob_lc}" id="act_fob_lc" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/act_fob_lc}" id="act_fob_lc" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/act_fob_lc_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/act_fob_lc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/act_fob_lc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/act_fob_lc_visible',formatter: 'LICE.Formatter.setVisible'}" />
 										<Text text="INR" id="compdes"></Text>
 									</f:content>
 								</f:SimpleForm>
@@ -119,75 +246,178 @@
 										<core:Title/>
 										<Label/>
 										<Label text="Company Code"/>
-										<Input value="{tablehead>/bukrs}" enabled="false" id="1" width="223px"/>
+										<Input value="{tablehead>/bukrs}" enabled="false" id="1" width="223px"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bukrs_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bukrs/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bukrs_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bukrs_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<!-- <Text text="{nndoHeaderDetail>/consigncod}" id="compdes"></Text> -->
 										<Label text="Issue Date"/>
 										<DatePicker id="2" value=" {path: 'tablehead>/issdt',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy"  enabled="false"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/issdt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/issdt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/issdt_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/issdt_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<!-- <Text text="{nndoHeaderDetail>/vendordes}" id="vendordes"></Text> -->
 										<Label text="Scheme Issue Authority"/>
-										<Input value="{tablehead>/issauth}" maxLength="30" width="110px" enabled="false"/>
+										<Input value="{tablehead>/issauth}" maxLength="30" width="110px" enabled="false"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/issauth_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/issauth/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/issdt_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/issauth_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Input value="" id="4" maxLength="30" width="107px" enabled="false"/>
 										<Label text="File Number"/>
-										<Input value="{tablehead>/fileno}" maxLength="30" enabled="false"/>
+										<Input value="{tablehead>/fileno}" maxLength="30" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/fileno_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/fileno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/fileno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/fileno_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="File Date"/>
 										<DatePicker value=" {path: 'tablehead>/filedt',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" enabled="false"
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/filedt_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/filedt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/filedt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/filedt_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="HQ File Number"/>
-										<Input value="{tablehead>/hq_fileno}" enabled="false" maxLength="30"/>
+										<Input value="{tablehead>/hq_fileno}" enabled="false" maxLength="30"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/hq_fileno_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/hq_fileno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/hq_fileno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/hq_fileno_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="LIC Imp Validity"/>
-										<Input value="{tablehead>/impval}" enabled="false" maxLength="25"/>
+										<Input value="{tablehead>/impval}" enabled="false" maxLength="25"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/impval_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/impval_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/impval/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/impval_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="Cust Notification Number"/>
-										<Input value="{tablehead>/cust_notif_no}" type="Number" enabled="false" liveChange="intcheck"/>
+										<Input value="{tablehead>/cust_notif_no}" type="Number" enabled="false" liveChange="intcheck"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/cust_notif_no_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/cust_notif_no_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											visible="{path: 'visible_Model>/cust_notif_no_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<core:Title/>
 										<Label text="Cust Notification Date"/>
 										<DatePicker value=" {path: 'tablehead>/cust_notif_dt',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy"  enabled="false"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/issdt1_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/issdt1/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/issdt1_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/issdt1_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="Meeting Number"/>
-										<Input value="{tablehead>/meetno}" enabled="{State>/enable}" liveChange="intcheck" id="meetno" maxLength="20"/>
+										<Input value="{tablehead>/meetno}" enabled="{State>/enable}" liveChange="intcheck" id="meetno" maxLength="20"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/meetno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/meetno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/meetno_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/meetno_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="Case Number"/>
-										<Input value="{tablehead>/caseno}" enabled="{State>/enable}" liveChange="intcheck" id="caseno" maxLength="15"/>
+										<Input value="{tablehead>/caseno}" enabled="{State>/enable}" liveChange="intcheck" id="caseno" maxLength="15"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/caseno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/caseno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/caseno_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/caseno_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="Meeting Date"/>
 										<DatePicker value=" {path: 'tablehead>/meetdt',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="{State>/enable}" id="meetdt"/>
+											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy"  enabled="{State>/enable}" id="meetdt"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/meetdt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/meetdt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/meetdt_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/meetdt_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="Plant"/>
-										<Input value="{tablehead>/instplant}" enabled="false" liveChange="intcheck"/>
+										<Input value="{tablehead>/instplant}" enabled="false" liveChange="intcheck"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/instplant_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/instplant/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/instplant_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/instplant_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="EO Fulfilled % value wise"/>
-										<Input value="{tablehead>/eo_val_percent}" enabled="false" liveChange="intcheck"/>
+										<Input value="{tablehead>/eo_val_percent}" enabled="false" liveChange="intcheck"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/eo_val_percent_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/eo_val_percent_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/eo_val_percent/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/eo_val_percent_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="Export Obligation End Date"/>
 										<DatePicker value=" {path: 'tablehead>/expenddt' ,formatter:'LICE.Formatter.convertToSAPdate' }" dateValue=" {/date}"
-											valueFormat=" yyyy-MM-ddT00:00:00" displayFormat=" dd/MM/yyyy" change=" ChangeSchmeIssue" enabled=" false"/>
+											valueFormat=" yyyy-MM-ddT00:00:00" displayFormat=" dd/MM/yyyy"  enabled=" false"
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/expenddt_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/expenddt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/expenddt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/expenddt_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text=" Export Extension End Date"/>
 										<DatePicker value=" {path: 'tablehead>/enddt ' ,formatter:'LICE.Formatter.convertToSAPdate' }" dateValue=" {/date}"
-											valueFormat=" yyyy-MM-ddT00:00:00" displayFormat=" dd/MM/yyyy" change=" ChangeSchmeIssue" enabled=" false"/>
+											valueFormat=" yyyy-MM-ddT00:00:00" displayFormat=" dd/MM/yyyy"  enabled=" false"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/enddt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/enddt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/enddt_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/enddt_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text=" Export Product Group"/>
-										<Input value=" {tablehead>/exp_prd_grp}" enabled="false"/>
+										<Input value=" {tablehead>/exp_prd_grp}" enabled="false"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/issdt1_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/issdt1/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/issdt1_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/issdt1_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<core:Title/>
 										<Label text="CIF Value in INR"/>
-										<Input value="{tablehead>/totciflc}" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/totciflc}" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/totciflc_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/totciflc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/totciflc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/totciflc_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Text text="INR"></Text>
 										<Label text="Duty Saved"/>
-										<Input value="{tablehead>/savdty}" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/savdty}" maxLength="4" enabled="false"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/savdty_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/savdty/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/savdty_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/savdty_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Text text="INR"></Text>
 										<Label text="Duty Used"/>
-										<Input value="{tablehead>/useddty}" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/useddty}" maxLength="4" enabled="false"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/useddty_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/useddty/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/useddty_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/useddty_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Text text="INR"></Text>
 										<Label text="Exp Obli FOB Value in FC"/>
-										<Input value="{tablehead>/obligfc}" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/obligfc}" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/obligfc_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/obligfc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/obligfc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/obligfc_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Text text="USD"></Text>
 										<Label text="Obli fixed as per LIC"/>
-										<Input value="{tablehead>/oblig_fix_lic}" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/oblig_fix_lic}" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/oblig_fix_lic_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/oblig_fix_lic_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/oblig_fix_lic/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/oblig_fix_lic_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Text text="INR"></Text>
 										<Label text="Obli as per Act Imp"/>
-										<Input value="{tablehead>/oblig_lic_imp}" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/oblig_lic_imp}" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/oblig_lic_imp_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/oblig_lic_imp_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/oblig_lic_imp/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/oblig_lic_imp_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Label text="Actual FOB USD"/>
-										<Input value="{tablehead>/act_fob_fc}" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/act_fob_fc}" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/act_fob_fc_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/act_fob_fc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/act_fob_fc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/act_fob_fc_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Text text="USD"></Text>
 										<Label text="Actual FOB INR"/>
-										<Input value="{tablehead>/act_fob_lc}" maxLength="4" enabled="false"/>
+										<Input value="{tablehead>/act_fob_lc}" maxLength="4" enabled="false"
+										required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/act_fob_lc_required',formatter: 'LICE.Formatter.setRequired'}"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/act_fob_lc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/act_fob_lc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/act_fob_lc_visible',formatter: 'LICE.Formatter.setVisible'}"/>
 										<Text text="INR"></Text>
 										<Label text="Composition Fee"/>
-										<Input value="{tablehead>/comp_fees}" maxLength="4" enabled="{State>/enable}"/>
+										<Input value="{tablehead>/comp_fees}" maxLength="4" enabled="{State>/enable}"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/comp_fees_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/comp_fees/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/comp_fees_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/comp_fees_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Text text="INR"></Text>
 									</f:content>
 								</f:SimpleForm>
@@ -200,57 +430,93 @@
 										<t:Column id="idsl11" tooltip="Status">
 											<Label text="Status"/>
 											<t:template>
-												<Text text="{tableExpobl>utiltyp}" id="utiltyp" enabled="false" wrapping="false"/>
+												<Text text="{tableExpobl>utiltyp}" id="utiltyp" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/utiltyp_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/utiltyp/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/utiltyp_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/utiltyp_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="idsl1" tooltip="Exp Sl No">
 											<Label text="Exp Sl No"/>
 											<t:template>
-												<Text text="{tableExpobl>bsutilno}" id="bsutilno" enabled="false" wrapping="false"/>
+												<Text text="{tableExpobl>bsutilno}" id="bsutilno" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsutilno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsutilno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsutilno_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsutilno_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="idsl" tooltip="Export Item Description">
 											<Label text="Export Item Description"/>
 											<t:template>
-												<Text text="{tableExpobl>maktx}" id="invoicer" enabled="false" wrapping="false"/>
+												<Text text="{tableExpobl>maktx}" id="invoicer" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/maktx_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/maktx/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/maktx_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/maktx_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="idcnno" tooltip="ITC(HS)Code">
 											<Label text="ITC(HS)Code"/>
 											<t:template>
-												<Text text="{tableExpobl>hscode}" id="invo1icenr" enabled="false" wrapping="false"/>
+												<Text text="{tableExpobl>hscode}" id="invo1icenr" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/hscode_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/hscode/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/hscode_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/hscode_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column  tooltip="Custom Invoice Number">
 											<Label text="Custom Invoice Number"/>
 											<t:template>
-												<Text text="{tableExpobl>cust_invno}" enabled="false" wrapping="false"/>
+												<Text text="{tableExpobl>cust_invno}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/cust_invno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/cust_invno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/cust_invno_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/cust_invno_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="Custom Invoice Date">
 											<Label text="Custom Invoice Date"/>
 											<t:template>
 												<DatePicker value=" {path: 'tableExpobl>/cust_invdate',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-													valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+													valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" enabled="false"
+													editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/cust_invdate_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/cust_invdate/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/cust_invdate_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/cust_invdate_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="idmatdeslumn" tooltip="Shipping Bill No">
 											<Label text="Shipping Bill No"/>
 											<t:template>
-												<Text text="{tableExpobl>shpbilno}" enabled="false" wrapping="false"/>
+												<Text text="{tableExpobl>shpbilno}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/shpbilno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/shpbilno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/shpbilno_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/shpbilno_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="idmatdes" tooltip="Shipping Bill Date">
 											<Label text="Shipping Bill Date"/>
 											<t:template>
 												<DatePicker id="shdt" value=" {path: 'tableExpobl>/shpbildt',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-													valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+													valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" enabled="false"
+													editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/shpbildt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/shpbildt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/shpbildt_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/shpbildt_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="idmatde" tooltip="Quantity">
 											<Label text="Quantity"/>
 											<t:template>
-												<Text text="{tabletableExpoblLists>bsqty}" enabled="false" wrapping="false"/>
+												<Text text="{tabletableExpoblLists>bsqty}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsqty_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsqty/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsqty_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsqty_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 									</t:columns>
@@ -263,75 +529,123 @@
 										<t:Column tooltip="Status">
 											<Label text="Status"/>
 											<t:template>
-												<Text text="{tableExpobl>utiltyp}" enabled="false" wrapping="false"/>
+												<Text text="{tableExpobl>utiltyp}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/utiltyp_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/utiltyp/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/utiltyp_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/utiltyp_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column  tooltip="Custom Invoice Number">
 											<Label text="Custom Invoice Number"/>
 											<t:template>
-												<Text text="{tableExpobl>cust_invno}" enabled="false" wrapping="false"/>
+												<Text text="{tableExpobl>cust_invno}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/cust_invno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/cust_invno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/cust_invno_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/cust_invno_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="Custom Invoice Date">
 											<Label text="Custom Invoice Date"/>
 											<t:template>
 												<DatePicker value=" {path: 'tableExpobl>/cust_invdate',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-													valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+													valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" enabled="false"
+													editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/cust_invdate_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/cust_invdate/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/cust_invdate_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/cust_invdate_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="Shipping Bill No">
 											<Label text="Shipping Bill No"/>
 											<t:template>
-												<Text text="{tableExpobl>shpbilno}" enabled="false" wrapping="false"/>
+												<Text text="{tableExpobl>shpbilno}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/shpbilno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/shpbilno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/shpbilno_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/shpbilno_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="Shipping Bill Date">
 											<Label text="Shipping Bill Date"/>
 											<t:template>
 												<DatePicker value=" {path: 'tableExpobl>/shpbildt',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-													valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+													valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" enabled="false"
+													editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/shpbildt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/shpbildt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/shpbildt_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/shpbildt_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="Doc.Value Applied(FC)">
 											<Label text="Doc.Value Applied(FC)"/>
 											<t:template>
-												<Text text="{tableExpobl>bsvalfc}" enabled="false" wrapping="false"/>
+												<Text text="{tableExpobl>bsvalfc}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsvalfc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsvalfc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsvalfc_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsvalfc_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="Currency">
 											<Label text="Currency"/>
 											<t:template>
-												<Text text="{tableExpobl>cukyfc}" enabled="false" wrapping="false"/>
+												<Text text="{tableExpobl>cukyfc}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/cukyfc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/cukyfc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/cukyfc_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/cukyfc_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="Exch Rate INR">
 											<Label text="Exch Rate INR"/>
 											<t:template>
-												<Text text="{tableExpobl>bsexrate}" enabled="false" wrapping="false"/>
+												<Text text="{tableExpobl>bsexrate}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsexrate_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsexrate/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsexrate_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsexrate_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="Doc. value Applied(LC)">
 											<Label text="Doc. value Applied(LC)"/>
 											<t:template>
-												<Text text="{tableExpobl>bsvallc}" enabled="false" wrapping="false"/>
+												<Text text="{tableExpobl>bsvallc}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsvallc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsvallc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsvallc_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsvallc_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="Currency">
 											<Label text="Currency"/>
 											<t:template>
-												<Text text="{tableExpobl>cukyrs}" enabled="false" wrapping="false"/>
+												<Text text="{tableExpobl>cukyrs}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/cukyrs_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/cukyrs/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/cukyrs_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/cukyrs_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="Actually Realized">
 											<Label text="Actually Realized"/>
 											<t:template>
-												<Text text="{tableExpobl>openacc_curr}" enabled="false" wrapping="false"/>
+												<Text text="{tableExpobl>openacc_curr}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsvallc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsvallc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsvallc_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsvallc_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="As Per EBRC">
 											<Label text="As Per EBRC"/>
 											<t:template>
-												<Text text="{tableExpobl>openacc_curr}" enabled="false" wrapping="false"/>
+												<Text text="{tableExpobl>openacc_curr}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsvallc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsvallc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsvallc_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsvallc_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 									</t:columns>
@@ -345,50 +659,82 @@
 										<t:Column id="id1sl11" tooltip="Item Description">
 											<Label text="Item Description"/>
 											<t:template>
-												<Text text="{tableimp>matldes}" id="d1occat" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>matldes}" id="d1occat" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/matldes_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/matldes/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/matldes_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/matldes_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="1idsl1" tooltip="ITC(HS) Code">
 											<Label text="ITC(HS) Code"/>
 											<t:template>
-												<Text text="{tableimp>hs_code}" id="doc2nr" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>hs_code}" id="doc2nr" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/hs_code_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/hs_code/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/hs_code_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/hs_code_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="id1sl" tooltip="Imports Allowed as per License">
 											<Label text="Imports Allowed as per License"/>
 											<t:template>
-												<Text text="{tableimp>bsqty}" id="invoicenr" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>bsqty}" id="invoicenr" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsqty_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsqty/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsqty_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsqty_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="idc3nno" tooltip="UOM">
 											<Label text="UOM"/>
 											<t:template>
-												<Text text="{tableimp>bsunit}" id="invo1ir" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>bsunit}" id="invo1ir" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsunit_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsunit/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsunit_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsunit_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="BOE No">
 											<Label text="BOE No"/>
 											<t:template>
-												<Text text="{tableimp>impdpsno}" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>impdpsno}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/impdpsno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/impdpsno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/impdpsno_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/impdpsno_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="idmatde3slumn" tooltip="BOE Date">
 											<Label text="BOE Date"/>
 											<t:template>
 												<DatePicker value=" {path: 'tableimp>/impdpdat',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-													valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+													valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" enabled="false"
+													editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/impdpdat_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/impdpdat/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/impdpdat_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/impdpdat_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="id2matdes" tooltip="Quantity imported as per BOE">
 											<Label text="Quantity imported as per BOE"/>
 											<t:template>
-												<Text text="{tableimp>bsqty}" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>bsqty}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsqty_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsqty/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsqty_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsqty_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="idm8atde" tooltip="UOM">
 											<Label text="UOM"/>
 											<t:template>
-												<Text text="{tableimp>bsunit}" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>bsunit}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsunit_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsunit/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsunit_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsunit_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 									</t:columns>
@@ -402,74 +748,122 @@
 										<t:Column tooltip="Item Description">
 											<Label text="Item Description"/>
 											<t:template>
-												<Text text="{tableimp>matldes}" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>matldes}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/matldes_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/matldes/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/matldes_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/matldes_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="ITC(HS) Code">
 											<Label text="ITC(HS) Code"/>
 											<t:template>
-												<Text text="{tableimp>hs_code}" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>hs_code}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/hs_code_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/hs_code/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/hs_code_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/hs_code_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="Imports Allowed as per License">
 											<Label text="Imports Allowed as per License"/>
 											<t:template>
-												<Text text="{tableimp>invoicenr}" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>invoicenr}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/hs_code_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/hs_code/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/hs_code_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/hs_code_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="UOM">
 											<Label text="UOM"/>
 											<t:template>
-												<Text text="{tableimp>bsunit}" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>bsunit}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsunit_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsunit/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsunit_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsunit_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="BOE No">
 											<Label text="BOE No"/>
 											<t:template>
-												<Text text="{tableimp>impdpsno}" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>impdpsno}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/impdpsno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/impdpsno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/impdpsno_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/impdpsno_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="BOE Date">
 											<Label text="BOE Date"/>
 											<t:template>
 												<DatePicker value=" {path: 'tableimp>/impdpdat ',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-													valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="false"/>
+													valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" enabled="false"
+													editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/impdpdat_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/impdpdat/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/impdpdat_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/impdpdat_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="Quantity imported as per BOE">
 											<Label text="Quantity imported as per BOE"/>
 											<t:template>
-												<Text text="{tableimp>bsqty}" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>bsqty}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsqty_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsqty/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsqty_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsqty_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="UOM">
 											<Label text="UOM"/>
 											<t:template>
-												<Text text="{tableimp>bsunit}" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>bsunit}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsunit_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsunit/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsunit_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsunit_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="Total CIF Value Applicable">
 											<Label text="Total CIF Value Applicable"/>
 											<t:template>
-												<Text text="{tableimp>cifvlrs}" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>cifvlrs}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/cifvlrs_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/cifvlrs/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/cifvlrs_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/cifvlrs_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="CIF Value in USD">
 											<Label text="CIF Value in USD"/>
 											<t:template>
-												<Text text="{tableimp>cifvlfc}" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>cifvlfc}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/cifvlfc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/cifvlfc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/cifvlfc_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/cifvlfc_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="Currency">
 											<Label text="Currency"/>
 											<t:template>
-												<Text text="{tableimp>currencycode}" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>currencycode}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/currencycode_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/currencycode/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/currencycode_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/currencycode_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="Duty Saved">
 											<Label text="Duty Saved"/>
 											<t:template>
-												<Text text="{tableimp>bsdtysavd}" enabled="false" wrapping="false"/>
+												<Text text="{tableimp>bsdtysavd}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsdtysavd_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsdtysavd/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsdtysavd_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsdtysavd_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 									</t:columns>
@@ -483,81 +877,133 @@
 										<t:Column id="seril" tooltip="Serial Number">
 											<Label text="Serial Number"/>
 											<t:template>
-												<Text text="{tableexcImp>doccat}" id="ser" enabled="false" wrapping="false"/>
+												<Text text="{tableexcImp>sl_no}" id="ser" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/sl_no_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/sl_no/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/sl_no_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/sl_no_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="item" tooltip="Item Description">
 											<Label text="Item Description"/>
 											<t:template>
-												<Text text="{tableexcImp>docnr}" id="item1" enabled="false" wrapping="false"/>
+												<Text text="{tableexcImp>matldes}" id="item1" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/matldes_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/matldes/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/matldes_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/matldes_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="exc" tooltip="Excess Quantity">
 											<Label text="Excess Quantity"/>
 											<t:template>
-												<Text text="{tableexcImp>invoicenr}" id="exq" enabled="false" wrapping="false"/>
+												<Text text="{tableexcImp>excess_qty}" id="exq" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/excess_qty_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/excess_qty/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/excess_qty_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/excess_qty_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="bon" tooltip="BOE No">
 											<Label text="BOE No"/>
 											<t:template>
-												<Text text="{tableexcImp>invoicenr}" id="bown" enabled="false" wrapping="false"/>
+												<Text text="{tableexcImp>cust_boe_no}" id="bown" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/cust_boe_no_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/cust_boe_no/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/cust_boe_no_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/cust_boe_no_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column tooltip="BOE Date">
 											<Label text="BOE Date"/>
 											<t:template>
-												<Text text="{tableexcImp>invoiceval}" id="bdt" enabled="false" wrapping="false"/>
+												<Text text="{tableexcImp>cust_boe_dt}" id="bdt" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/cust_boe_dt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/cust_boe_dt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/cust_boe_dt_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/cust_boe_dt_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="bq" tooltip="BOE Quantity">
 											<Label text="BOE Quantity"/>
 											<t:template>
-												<Text text="{tableexcImp>invoicecur}" enabled="false" wrapping="false" id="bqnty"/>
+												<Text text="{tableexcImp>boe_qty}" enabled="false" wrapping="false" id="bqnty"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/boe_qty_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/boe_qty/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/boe_qty_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/boe_qty_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="euom" tooltip="UOM">
 											<Label text="UOM"/>
 											<t:template>
-												<Text text="{tableexcImp>openacc_curr}" enabled="false" wrapping="false" id="exuom"/>
+												<Text text="{tableexcImp>boe_qty}" enabled="false" wrapping="false" id="exuom"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/boe_qty_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/boe_qty/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/boe_qty_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/boe_qty_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="cusd" tooltip="Customs Duty">
 											<Label text="Customs Duty"/>
 											<t:template>
-												<Text text="{tableexcImp>openacc_curr}" enabled="false" wrapping="false" id="exdty"/>
+												<Text text="{tableexcImp>openacc_curr}" enabled="false" wrapping="false" id="exdty"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsdtysavd_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsdtysavd/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsdtysavd_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsdtysavd_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="cucurr" tooltip="Currency">
 											<Label text="Currency"/>
 											<t:template>
-												<Text text="{tableexcImp>openacc_curr}" enabled="false" wrapping="false" id="currency"/>
+												<Text text="{tableexcImp>cudtcky}" enabled="false" wrapping="false" id="currency"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/cudtcky_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/cudtcky/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/cudtcky_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/cudtcky_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="in2tamt" tooltip="Interest Amoun">
 											<Label text="Interest Amount"/>
 											<t:template>
-												<Text text="{tableexcImp>openacc_curr}" enabled="false" wrapping="false" id="inmt"/>
+												<Text text="{tableexcImp>openacc_curr}" enabled="false" wrapping="false" id="inmt"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsdtysavd_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsdtysavd/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsdtysavd_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsdtysavd_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="cur1" tooltip="Currency">
 											<Label text="Currency"/>
 											<t:template>
-												<Text text="{tableexcImp>openacc_curr}" enabled="false" wrapping="false" id="cu"/>
+												<Text text="{tableexcImp>cudtcky}" enabled="false" wrapping="false" id="cu"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/cudtcky_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/cudtcky/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/cudtcky_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/cudtcky_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
-										<t:Column id="intmt" tooltip="Inerest Amount">
+										<!-- <t:Column id="intmt" tooltip="Inerest Amount">
 											<Label text="Inerest Amount"/>
 											<t:template>
-												<Text text="{tableexcImp>openacc_curr}" enabled="false" wrapping="false" id="intamt"/>
+												<Text text="{tableexcImp>openacc_curr}" enabled="false" wrapping="false" id="intamt"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsdtysavd_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsdtysavd/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsdtysavd_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsdtysavd_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="incctmt" tooltip="Currency">
 											<Label text="Currency"/>
 											<t:template>
-												<Text text="{tableexcImp>openacc_curr}" enabled="false" wrapping="false" id="intamct"/>
+												<Text text="{tableexcImp>openacc_curr}" enabled="false" wrapping="false" id="intamct"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bsdtysavd_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bsdtysavd/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bsdtysavd_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bsdtysavd_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
-										</t:Column>
+										</t:Column> -->
 									</t:columns>
 								</t:Table>
 							</IconTabFilter>
@@ -569,34 +1015,81 @@
 									<f:content>
 										<core:Title/>
 										<Label text="BCD Value" id="bc2d"/>
-										<Input value="{tablecust>/bcd}" enabled="{State>/enable}" id="bcd"  maxLength="13" liveChange="DecCheckbcd"/>
+										<Input value="{tablecust>/bcd}" enabled="{State>/enable}" id="bcd"  maxLength="13" liveChange="DecCheckbcd"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bcd_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bcd/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bcd_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bcd_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="SWS Value" id="sw5s"/>
-										<Input value="{tablecust>/sws}" enabled="{State>/enable}" id="sws"  maxLength="13" liveChange="DecChecksws"/>
+										<Input value="{tablecust>/sws}" enabled="{State>/enable}" id="sws"  maxLength="13" liveChange="DecChecksws"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/sws_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/sws/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/sws_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/sws_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="IGST Value" id="igs3t"/>
-										<Input value="{tablecust>/igst}" enabled="{State>/enable}" id="igst"  maxLength="13" liveChange="DecCheckigst"/>
+										<Input value="{tablecust>/igst}" enabled="{State>/enable}" id="igst"  maxLength="13" liveChange="DecCheckigst"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/igst_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/igst/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/igst_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/igst_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="Interest Amount " id="BCD_5Value"/>
-										<Input value="{tablecust>/intrst_amt}" enabled="{State>/enable}" id="intrst_amt"  maxLength="13" liveChange="DecCheckint"/>
+										<Input value="{tablecust>/intrst_amt}" enabled="{State>/enable}" id="intrst_amt"  maxLength="13" liveChange="DecCheckint"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/intrst_amt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/intrst_amt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/intrst_amt_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/intrst_amt_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="Custom Duty Paid " id="BCD_4Value"/>
 										<Input value="{tablecust>/cust_dty_paid}" enabled="{State>/enable}" id="cust_dty_paid"  maxLength="13"
-											liveChange="DecCheckcust"/>
+											liveChange="DecCheckcust"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/cust_dty_paid_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/cust_dty_paid/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/cust_dty_paid_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/cust_dty_paid_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="Interest Paid" id="BCD_3Value"/>
-										<Input value="{tablecust>/intrst_paid}" enabled="{State>/enable}" id="intrst_paid" maxLength="13" liveChange="DecCheckintp"/>
+										<Input value="{tablecust>/intrst_paid}" enabled="{State>/enable}" id="intrst_paid" maxLength="13" liveChange="DecCheckintp"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/intrst_paid_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/intrst_paid/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/intrst_paid_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/intrst_paid_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<core:Title/>
 										<Label text="Composition fee Paid" id="BCD_2Value"/>
 										<Input value="{tablecust>/comp_fee_paid}" enabled="{State>/enable}" id="comp_fee_paid"  maxLength="13"
-											liveChange="DecCheckcomp"/>
+											liveChange="DecCheckcomp"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/comp_fee_paid_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/comp_fee_paid/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/comp_fee_paid_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/comp_fee_paid_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="Any other payment" id="BCD_1Value"/>
-										<Input value="{tablecust>/other_charges}" enabled="{State>/enable}" id="other_charges"  maxLength="13" liveChange="DecCheckan"/>
+										<Input value="{tablecust>/other_charges}" enabled="{State>/enable}" id="other_charges"  maxLength="13" liveChange="DecCheckan"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/other_charges_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/other_charges/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/other_charges_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/other_charges_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="Duty Paid Date" id="BCD_Va6lue"/>
 										<DatePicker value="{path: 'tablecust>/duty_paid_dt',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="{State>/enable}" id="duty_paid_dt"
-											/>
+											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy"  enabled="{State>/enable}" id="duty_paid_dt"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/duty_paid_dt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/duty_paid_dt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/duty_paid_dt_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/duty_paid_dt_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="Bank Reference No" id="bankc"/>
-										<Input value="{tablecust>/bnkrefno}" enabled="{State>/enable}" id="bnkrefno" />
+										<Input value="{tablecust>/bnkrefno}" enabled="{State>/enable}" id="bnkrefno" 
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bnkrefno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bnkrefno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bnkrefno_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bnkrefno_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="Bank Name" id="BCD_Value7"/>
-										<Input value="{tablecust>/bank_name}" enabled="{State>/enable}" id="bank_name" />
+										<Input value="{tablecust>/bank_name}" enabled="{State>/enable}" id="bank_name"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bank_name_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bank_name/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bank_name_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bank_name_required',formatter: 'LICE.Formatter.setRequired'}" />
 										<Label text="Customs Details" id="BCD_Value8"/>
-										<Input value="{tablecust>/cust_details}" enabled="{State>/enable}" id="cust_details" />
+										<Input value="{tablecust>/cust_details}" enabled="{State>/enable}" id="cust_details" 
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/cust_details_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/cust_details/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/cust_details_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/cust_details_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<core:Title/>
 									</f:content>
 								</f:SimpleForm>
@@ -609,89 +1102,145 @@
 									<f:content>
 										<core:Title/>
 										<Label text="Redemption Ref No "/>
-										<Input value="{tablered>/red_ref_no}" enabled="{State>/enable}" id="red_ref_no" maxLength="10"/>
+										<Input value="{tablered>/red_ref_no}" enabled="{State>/enable}" id="red_ref_no" maxLength="10"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/red_ref_no_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/red_ref_no/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/red_ref_no_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/red_ref_no_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text=" Redemption Date "/>
 										<DatePicker value="{path: 'tablered>/red_date',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="{State>/enable}" id="red_date"/>
+											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy"  enabled="{State>/enable}" id="red_date"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/red_date_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/red_date/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/red_date_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/red_date_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="Redmptn App sub date to DGFT"/>
 										<DatePicker value="{path: 'tablered>/dgft_sub_dt',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="{State>/enable}" id="dgft_sub_dt"
-											/>
+											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy"  enabled="{State>/enable}" id="dgft_sub_dt"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/dgft_sub_dt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/dgft_sub_dt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/dgft_sub_dt_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/dgft_sub_dt_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<core:Title/>
 										<Label text="Redemption Status" id="redst"/>
-										<Input value="{tablered>/status}" enabled="{State>/enable}" id="status"  maxLength="8"/>
+										<Input value="{tablered>/status}" enabled="{State>/enable}" id="status"  maxLength="8"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/status_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/status/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/status_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/status_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="BOND/LUT Close Date" id="bndt"/>
 										<DatePicker value="{path: 'tablered>/bnd_lut_clsdt',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="{State>/enable}" id="bnd_lut_clsdt"
-											/>
+											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy"  enabled="{State>/enable}" id="bnd_lut_clsdt"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/bnd_lut_clsdt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/bnd_lut_clsdt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/bnd_lut_clsdt_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/bnd_lut_clsdt_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<Label text="License close Date" id="liccl"/>
 										<DatePicker value="{path: 'tablered>/license_clsdt',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="{State>/enable}" id="license_clsdt"
-											/>
+											valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy"  enabled="{State>/enable}" id="license_clsdt"
+											editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/license_clsdt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/license_clsdt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/license_clsdt_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/license_clsdt_required',formatter: 'LICE.Formatter.setRequired'}"/>
 										<core:Title/>
 									</f:content>
 								</f:SimpleForm>
 							</IconTabFilter>
 							<IconTabSeparator icon="" id="aro" visible="true"/>
 							<IconTabFilter icon="sap-icon://contacts" text="ARO Invalidation Details" id="aro1" visible="true">
-								<t:Table id="idItemTtable4" rowSelectionChange="OnSelectChange" title="Details of Export Oblication" rows="{tableLists>/results}"
+								<t:Table id="idItemTtable4" rowSelectionChange="OnSelectChange" title="Details of ARO Invalidation" rows="{tableAro>/results}"
 									fixedColumnCount="0" selectionMode="Single">
 									<t:columns>
-										<t:Column id="itdescp" tooltip="">
-											<Label text="Item Description"/>
-											<t:template>
-												<Text text="{tableLists>doccat}" id="itdesc" enabled="false" wrapping="false"/>
-											</t:template>
-										</t:Column>
-										<t:Column id="iml" tooltip="">
-											<Label text="Imports Allowed as Per LIC"/>
-											<t:template>
-												<Text text="{tableLists>docnr}" id="imlic" enabled="false" wrapping="false"/>
-											</t:template>
-										</t:Column>
-										<t:Column id="uom2l" tooltip="">
-											<Label text="UOM"/>
-											<t:template>
-												<Text text="{tableLists>invoicenr}" id="arouom" enabled="false" wrapping="false"/>
-											</t:template>
-										</t:Column>
-										<t:Column id="gtinv" tooltip="">
-											<Label text="GST Invoice Number"/>
-											<t:template>
-												<Text text="{tableLists>invoicenr}" id="gstinv" enabled="false" wrapping="false"/>
-											</t:template>
-										</t:Column>
-										<t:Column >
-											<Label text="GST Invoice Date"/>
-											<t:template>
-												<Text text="{ path: 'tableLists>invoicedt', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }" id="gstdate"
-													enabled="false"/>
-											</t:template>
-										</t:Column>
-										<t:Column id="poquantyrew" tooltip="">
-											<Label text="PO Recieved Quantity"/>
-											<t:template>
-												<Text text="{tableLists>invoicecur}" enabled="false" wrapping="false"/>
-											</t:template>
-										</t:Column>
-										<t:Column id="aroouo" tooltip="">
-											<Label text="UOM"/>
-											<t:template>
-												<Text text="{tableLists>invoicecur}" enabled="false" wrapping="false"/>
-											</t:template>
-										</t:Column>
-										<t:Column id="arocif" tooltip="">
-											<Label text="CIF Value"/>
-											<t:template>
-												<Text text="{tableLists>openacc_curr}" enabled="false" wrapping="false"/>
-											</t:template>
-										</t:Column>
-										<t:Column id="aroccurrencty" tooltip="">
-											<Label text="Currency"/>
-											<t:template>
-												<Text text="{tableLists>openacc_curr}" enabled="false" wrapping="false"/>
-											</t:template>
-										</t:Column>
+										<t:Column id="itdescp" tooltip="Item Description">
+									<Label text="Item Description"/>
+									<t:template>
+										<Text text="{tableAro>matdesc}" id="itdesc" enabled="false" wrapping="false"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/matdesc_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/matdesc/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/matdesc_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/matdesc_required',formatter: 'LICE.Formatter.setRequired'}"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="iml" tooltip="Imports Allowed as Per LIC">
+									<Label text="Imports Allowed as Per LIC"/>
+									<t:template>
+										<Text text="{tableAro>quantity}" id="imlic" enabled="false" wrapping="false"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>quantity_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/quantity/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/quantity_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/quantity_required',formatter: 'LICE.Formatter.setRequired'}"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="uom2l" tooltip="UOM">
+									<Label text="UOM"/>
+									<t:template>
+										<Text text="{tableAro>unit}" id="arouom" enabled="false" wrapping="false"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/unit_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/unit/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/unit_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/unit_required',formatter: 'LICE.Formatter.setRequired'}"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="gtinv" tooltip="GST Invoice Number">
+									<Label text="GST Invoice Number"/>
+									<t:template>
+										<Text text="{tableAro>gst_invoice_no}" id="gstinv" enabled="false" wrapping="false"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/gst_invoice_no_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/gst_invoice_no/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/gst_invoice_no_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/gst_invoice_no_required',formatter: 'LICE.Formatter.setRequired'}"/>
+									</t:template>
+								</t:Column>
+								<t:Column tooltip="GST Invoice Date">
+									<Label text="GST Invoice Date"/>
+									<t:template>
+										<Text text="{ path: 'tableAro>gst_invoice_dt', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }" id="gstdate"
+											enabled="false" editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/gst_invoice_dt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/gst_invoice_dt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/gst_invoice_dt_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/gst_invoice_dt_required',formatter: 'LICE.Formatter.setRequired'}"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="poquantyrew" tooltip="PO Recieved Quantity">
+									<Label text="PO Recieved Quantity"/>
+									<t:template>
+										<Text text="{tableAro>recqty}" enabled="false" wrapping="false"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/recqty_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/recqty/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/recqty_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/recqty_required',formatter: 'LICE.Formatter.setRequired'}"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="aroouo" tooltip="UOM">
+									<Label text="UOM"/>
+									<t:template>
+										<Text text="{tableAro>unit}" enabled="false" wrapping="false"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/unit_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/unit/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/unit_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/unit_required',formatter: 'LICE.Formatter.setRequired'}"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="arocif" tooltip="CIF Value">
+									<Label text="CIF Value"/>
+									<t:template>
+										<Text text="{tableAro>valrs}" enabled="false" wrapping="false"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/valrs_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/valrs/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/valrs_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/valrs_required',formatter: 'LICE.Formatter.setRequired'}"/>
+									</t:template>
+								</t:Column>
+								<t:Column id="aroccurrencty" tooltip="Currency">
+									<Label text="Currency"/>
+									<t:template>
+										<Text text="{tableAro>waers}" enabled="false" wrapping="false"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/waers_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/waers/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/waers_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/waers_required',formatter: 'LICE.Formatter.setRequired'}"/>
+									</t:template>
+								</t:Column>
 									</t:columns>
 								</t:Table>
 							</IconTabFilter>
@@ -708,48 +1257,72 @@
 										</Toolbar>
 									</t:toolbar>
 									<t:columns>
-										<t:Column tooltip="">
+										<t:Column tooltip="Sl No">
 											<Label text="Sl No"/>
 											<t:template>
-												<Input value="{tableEncl>sl_no}" id="sl_no" enabled="false" wrapping="false" maxLength="3"/>
+												<Input value="{tableEncl>sl_no}" id="sl_no" enabled="false" wrapping="false" maxLength="3"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/sl_no_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/sl_no/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/sl_no_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/sl_no_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
-										<t:Column id="dosc" tooltip="">
+										<t:Column id="dosc" tooltip="Document Description">
 											<Label text="Document Description"/>
 											<t:template>
-												<Input value="{tableEncl>docdescr}" enabled="{State>/enable}" id="docdescr" maxLength="30"/>
+												<Input value="{tableEncl>docdescr}" enabled="{State>/enable}" id="docdescr" maxLength="30"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/docdescr_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/docdescr/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/docdescr_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/docdescr_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
-										<t:Column id="uoml" tooltip="">
+										<t:Column id="uoml" tooltip="Check">
 											<Label text="Check"/>
 											<t:template>
 												<!--<CheckBox selected="{= ${tableEncl>docchk} !== 'T'}" change="handleChange"/>-->
 												<CheckBox selected="true" change="handleChange"/>
 											</t:template>
 										</t:Column>
-										<t:Column id="org" tooltip="">
+										<t:Column id="org" tooltip="Original">
 											<Label text="Original"/>
 											<t:template>
-												<Input value="{tableEncl>docorg}" enabled="{State>/enable}" id="docorg" maxLength="2" liveChange="NumbercheckOriginal"/>
+												<Input value="{tableEncl>docorg}" enabled="{State>/enable}" id="docorg" maxLength="2" liveChange="NumbercheckOriginal"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/docorg_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/docorg/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/docorg_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/docorg_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
-										<t:Column >
+										<t:Column tooltip="Copy">
 											<Label text="Copy"/>
 											<t:template>
-												<Input value="{tableEncl>doccopy}" enabled="{State>/enable}" id="doccopy" maxLength="2" liveChange="Numbercheckcopy"/>
+												<Input value="{tableEncl>doccopy}" enabled="{State>/enable}" id="doccopy" maxLength="2" liveChange="Numbercheckcopy"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/doccopy_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/doccopy/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/doccopy_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/doccopy_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
-										<t:Column id="endocn" tooltip="">
+										<t:Column id="endocn" tooltip="Document No">
 											<Label text="Document No"/>
 											<t:template>
-												<Input value="{tableEncl>doc_no}" enabled="{State>/enable}" wrapping="false" id="doc_no" maxLength="10"/>
+												<Input value="{tableEncl>doc_no}" enabled="{State>/enable}" wrapping="false" id="doc_no" maxLength="10"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/doc_no_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/doc_no/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/doc_no_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/doc_no_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
-										<t:Column id="endocdt" tooltip="">
+										<t:Column id="endocdt" tooltip="Document Date">
 											<Label text="Document Date"/>
 											<t:template>
 												<DatePicker id="doc_dt" value=" {path: 'tableEncl>doc_dt',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-													valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="{State>/enable}"/>
+													valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeDocdate" enabled="{State>/enable}"
+													editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/doc_dt_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/doc_dt/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/doc_dt_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/doc_dt_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 										<t:Column id="iditemdel" width="7%">
@@ -763,45 +1336,69 @@
 							</IconTabFilter>
 							<IconTabSeparator icon=""/>
 							<IconTabFilter icon="sap-icon://wallet" text="Installation" id="idItemTtinst">
-								<t:Table rowSelectionChange="OnSelectChange" title="Details of Installation" rows="{tableLists>/results}" fixedColumnCount="0"
+								<t:Table rowSelectionChange="OnSelectChange" title="Details of Installation" rows="{tableinsta>/results}" fixedColumnCount="0"
 									selectionMode="Single">
 									<t:columns>
-										<t:Column tooltip="">
+										<t:Column tooltip="Document Number">
 											<Label text="Document Number"/>
 											<t:template>
-												<Text text="{tableLists>doccat}" enabled="false" wrapping="false"/>
+												<Text text="{tableinsta>docno}" enabled="false" wrapping="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/docno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/docno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/docno_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/docno_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
-										<t:Column tooltip="">
+										<t:Column tooltip="BOE Number">
 											<Label text="BOE Number"/>
 											<t:template>
-												<Input value="{tableinsta>boeitno}" enabled="false"/>
+												<Input value="{tableinsta>impdpsno}" enabled="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/impdpsno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/impdpsno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/impdpsno_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/impdpsno_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
-										<t:Column tooltip="">
+										<t:Column tooltip="Installation Certificate Number">
 											<Label text="Installation Certificate Number"/>
 											<t:template>
-												<Input value="{tableinsta>boeitno}" enabled="false"/>
+												<Input value="{tableinsta>boeitno}" enabled="false"
+												editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/boeitno_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/boeitno/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/boeitno_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/boeitno_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
-										<t:Column tooltip="">
+										<t:Column tooltip="Intsallation Certificate Date">
 											<Label text="Intsallation Certificate Date"/>
 											<t:template>
-												<DatePicker value=" {path: 'Lists>/due_date',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
-													valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="true"/>
+												<DatePicker value=" {path: 'tableinsta>/impdpdat',formatter:'LICE.Formatter.convertToSAPdate'}" dateValue="{/date}"
+													valueFormat="yyyy-MM-ddT00:00:00" displayFormat="dd/MM/yyyy" change="ChangeSchmeIssue" enabled="true"
+													editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/impdpdat_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/impdpdat/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/impdpdat_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/impdpdat_required',formatter: 'LICE.Formatter.setRequired'}"/>
 												<Label text="Importer Bank"/>
 											</t:template>
 										</t:Column>
-										<t:Column tooltip="">
+										<t:Column tooltip="Installation Quantity">
 											<Label text="Installation Quantity"/>
 											<t:template>
-												<Input value="" enabled="false"/>
+												<Input value="{tableinsta>alloqty}" enabled="false"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/alloqty_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/alloqty/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/alloqty_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/alloqty_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
-										<t:Column >
+										<t:Column tooltip="Unit">
 											<Label text="Unit"/>
 											<t:template>
-												<Text text="{tableLists>invoicecur}" enabled="false" wrapping="false"/>
+												<Input value="{tableinsta>meins}" enabled="false" wrapping="false"
+										editable="{path: 'xBRIxI_EDSGENHD_A1Type_Model>/meins_editable',formatter: 'LICE.Formatter.setEditable'}" 
+											type="{path:'Headermodel>/#xBRIxI_EDSGENHD_A1Type/meins/@type', formatter:'LICE.Formatter.formatType'}"
+											visible="{path: 'visible_Model>/meins_visible',formatter: 'LICE.Formatter.setVisible'}" 
+											required="{path: 'xBRIxI_EDSGENHD_A2Type_Model>/meins_required',formatter: 'LICE.Formatter.setRequired'}"/>
 											</t:template>
 										</t:Column>
 									</t:columns>

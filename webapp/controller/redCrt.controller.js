@@ -236,12 +236,13 @@ sap.ui.define([
 
 				// } else if (_self.oSelectedItem == "Clubbinf DFL") {  
 
-			} else {}
+			} else { }
 			_self.expobligation();
 			_self.Impsumm();
 			_self.header();
 			_self.excImp();
 			_self.Installation();
+			_self.Aro();
 
 		},
 		header: function () {
@@ -414,6 +415,33 @@ sap.ui.define([
 			});
 
 		},
+		Aro: function(){
+			debugger;
+			var _self = this;
+			_self.oTrk_Model.read("/xBRIxI_IBSITMASTPO", {
+				success: function (oData) {
+					_self.getView().byId("idItemTtable4").setVisible(true);
+					console.log(oData);
+					if (oData.results.length <= 0) {
+						MessageBox.error("No Matching Result(s) Found for the Filter Aro Invalidation");
+					} else {
+						_self.tempjsonAro = {
+							results: []
+						};
+						_self.tempjsonAro.results = _self.tempjsonAro.results.concat(oData.results);
+						_self.tempjsonAro.results = _self.tempjsonAro.results.filter(a => a.trkno == _self.trkno);
+
+						var oModelDataAro = new sap.ui.model.json.JSONModel();
+						oModelDataAro.setData(_self.tempjsonAro);
+						_self.getView().setModel(oModelDataAro, "tableAro");
+
+					}
+				},
+				error: function (error) {
+					MessageBox.error("Something Went Wrong . Please Try again Later");
+				}
+			});
+		},
 		addItemRow: function () {
 			debugger;
 			if (!this.tempjsonenclosure) {
@@ -492,7 +520,7 @@ sap.ui.define([
 					var NewDateform = value;
 				} else if (value.indexOf("T00:00:00")) {
 					return value;
-				} else {}
+				} else { }
 				var mnth = ("0" + (NewDateform.getMonth() + 1)).slice(-2);
 				var day = ("0" + NewDateform.getDate()).slice(-2);
 				var output = [NewDateform.getFullYear(), mnth, day].join("-") + "T00:00:00";
@@ -562,7 +590,7 @@ sap.ui.define([
 					act_imp_cif_val: this.getView().byId("act_imp_cif_val").getValue(),
 					act_fob_fc: this.getView().byId("act_fob_fc").getValue(),
 					act_fob_lc: this.getView().byId("act_fob_lc").getValue()
-						// totinvval_curr: this.getView().byId("totinvval_curr").getValue()
+					// totinvval_curr: this.getView().byId("totinvval_curr").getValue()
 				};
 				if ((_self.oEntry.filedt == ' ') || (_self.oEntry.filedt == "")) {
 
@@ -656,6 +684,11 @@ sap.ui.define([
 
 					_self.oEntry.esecondextdt = null;
 				}
+				if ((_self.oEntry.meetdt == ' ') || (_self.oEntry.meetdt == "")) {
+
+					_self.oEntry.meetdt = null;
+				}
+
 
 			}
 			///////////////////******************custom details////////////////////////////
@@ -696,12 +729,37 @@ sap.ui.define([
 				}]
 			};
 			_self.oEntry.to_redemption_duty.push(_self.jsonHeaderCustm.results[0]);
-			// for (var i = 0; i < _self.tempjsonhead.results.length; i++) {
-			// 	const object = _self.tempjsonhead.results[i];
+			for (var i = 0; i < _self.jsonHeaderCustm.results.length; i++) {
+				if ((_self.jsonHeaderCustm.results[i].bcd == "") || (_self.jsonHeaderCustm.results[i].bcd == '')) {
+					_self.jsonHeaderCustm.results[i].bcd = null;
+				}
+				if ((_self.jsonHeaderCustm.results[i].sws == "") || (_self.jsonHeaderCustm.results[i].sws == '')) {
+					_self.jsonHeaderCustm.results[i].sws = null;
+				}
+				if ((_self.jsonHeaderCustm.results[i].igst == "") || (_self.jsonHeaderCustm.results[i].igst == '')) {
+					_self.jsonHeaderCustm.results[i].igst = null;
+				}
+				if ((_self.jsonHeaderCustm.results[i].intrst_paid == "") || (_self.jsonHeaderCustm.results[i].intrst_paid == '')) {
+					_self.jsonHeaderCustm.results[i].intrst_paid = "0.00";
+				}
+				if ((_self.jsonHeaderCustm.results[i].cust_dty_paid == "") || (_self.jsonHeaderCustm.results[i].cust_dty_paid == '')) {
+					_self.jsonHeaderCustm.results[i].cust_dty_paid = "0.00";
+				}
+				if ((_self.jsonHeaderCustm.results[i].comp_fee_paid == "") || (_self.jsonHeaderCustm.results[i].comp_fee_paid == '')) {
+					_self.jsonHeaderCustm.results[i].comp_fee_paid = "0.00";
+				}
+				if ((_self.jsonHeaderCustm.results[i].other_charges == "") || (_self.jsonHeaderCustm.results[i].other_charges == '')) {
+					_self.jsonHeaderCustm.results[i].other_charges = "0.00";
+				}
+				if ((_self.jsonHeaderCustm.results[i].intrst_amt == "") || (_self.jsonHeaderCustm.results[i].intrst_amt == '')) {
+					_self.jsonHeaderCustm.results[i].intrst_amt = "0.00";
+				}
+				if ((_self.jsonHeaderCustm.results[i].duty_paid_dt == "") || (_self.jsonHeaderCustm.results[i].duty_paid_dt == '')) {
+					_self.jsonHeaderCustm.results[i].duty_paid_dt = null;
+				}
 
-			// 	object.impval = object.impval + ".00";
 
-			// }
+			}
 			_self.getView().getModel("tablehead").refresh();
 			///////////////////******************////////////////////////////
 			///////////////////******************redemption////////////////////////////
@@ -731,29 +789,39 @@ sap.ui.define([
 				}]
 			};
 			_self.oEntry.to_redemption_det.push(_self.jsonHeaderRedem.results[0]);
-			// for (var i = 0; i < _self.tempjsonhead.results.length; i++) {}
-			// 	const object = _self.tempjsonhead.results[i];
-
-			// 	object.impval = object.impval + ".00";
-
-			// }
+			for (var i = 0; i < _self.jsonHeaderRedem.results.length; i++) {
+				if ((_self.jsonHeaderRedem.results[i].red_date == "") || (_self.jsonHeaderRedem.results[i].red_date == '')) {
+					_self.jsonHeaderRedem.results[i].red_date = null;
+				}
+				if ((_self.jsonHeaderRedem.results[i].bnd_lut_clsdt == "") || (_self.jsonHeaderRedem.results[i].bnd_lut_clsdt == '')) {
+					_self.jsonHeaderRedem.results[i].bnd_lut_clsdt = null;
+				}
+				if ((_self.jsonHeaderRedem.results[i].license_clsdt == "") || (_self.jsonHeaderRedem.results[i].license_clsdt == '')) {
+					_self.jsonHeaderRedem.results[i].license_clsdt = null;
+				}
+				if ((_self.jsonHeaderRedem.results[i].dgft_sub_dt == "") || (_self.jsonHeaderRedem.results[i].dgft_sub_dt == '')) {
+					_self.jsonHeaderRedem.results[i].dgft_sub_dt = null;
+				}
+			}
 			_self.getView().getModel("tablehead").refresh();
 			/////////////////////**************/////////////////////////////
 			///////////////////******************enclosure details////////////////////////////
+			if (_self.tempjsonenclosure !=undefined) {
+				for (var i = 0; i < _self.tempjsonenclosure.results.length; i++) {
+					_self.tempjsonenclosure.results[i].trkno = _self.trkno;
+				}
+				_self.oEntry.to_redemption_enclousure = [];
+				for (var i = 0; i < _self.tempjsonenclosure.results.length; i++) {
+					_self.oEntry.to_redemption_enclousure.push(_self.tempjsonenclosure.results[i]);
+				}
 
-			for (var i = 0; i < _self.tempjsonenclosure.results.length; i++) {
-				_self.tempjsonenclosure.results[i].trkno = _self.trkno;
-			}
-			_self.oEntry.to_redemption_enclousure = [];
-			for (var i = 0; i < _self.tempjsonenclosure.results.length; i++) {
-				_self.oEntry.to_redemption_enclousure.push(_self.tempjsonenclosure.results[i]);
+				_self.getView().getModel("tablehead").refresh();
+
+				for (var i = 0; i < _self.tempjsonenclosure.results.length; i += 1) {
+					_self.tempjsonenclosure.results[i].docchk = "T";
+				}
 			}
 
-			_self.getView().getModel("tablehead").refresh();
-
-			for (var i = 0; i < _self.tempjsonenclosure.results.length; i += 1) {
-				_self.tempjsonenclosure.results[i].docchk = "T";
-			}
 
 			// for (var i = 0; i < _self.tempjsonenclosure.results.length; i += 1) {
 			// 	_self.oTrk_Model.create("/xBRIxi_imp_tl_rhdr(trkno='" + _self.tempjsonenclosure.results[
@@ -798,11 +866,6 @@ sap.ui.define([
 			// var rowval = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.mParameters.newValue;
 
-			if ((val == "") || (val == " ")) {
-				// if (val == " ") {
-				MessageBox.error("Cant make BDC filed as null");
-				return;
-			}
 
 			var val2 = isNaN(val);
 			if ((val2) == true) {
@@ -824,11 +887,6 @@ sap.ui.define([
 			// var rowval = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.mParameters.newValue;
 
-			if ((val == "") || (val == " ")) {
-				// if (val == " ") {
-				MessageBox.error("Cant make BDC filed as null");
-				return;
-			}
 
 			var val2 = isNaN(val);
 			if ((val2) == true) {
@@ -850,12 +908,6 @@ sap.ui.define([
 			// var rowval = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.mParameters.newValue;
 
-			if ((val == "") || (val == " ")) {
-				// if (val == " ") {
-				MessageBox.error("Cant make BDC filed as null");
-				return;
-			}
-
 			var val2 = isNaN(val);
 			if ((val2) == true) {
 				MessageBox.error("Only accept Numbers");
@@ -875,12 +927,6 @@ sap.ui.define([
 			debugger;
 			// var rowval = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.mParameters.newValue;
-
-			if ((val == "") || (val == " ")) {
-				// if (val == " ") {
-				MessageBox.error("Cant make BDC filed as null");
-				return;
-			}
 
 			var val2 = isNaN(val);
 			if ((val2) == true) {
@@ -902,12 +948,6 @@ sap.ui.define([
 			// var rowval = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.mParameters.newValue;
 
-			if ((val == "") || (val == " ")) {
-				// if (val == " ") {
-				MessageBox.error("Cant make BDC filed as null");
-				return;
-			}
-
 			var val2 = isNaN(val);
 			if ((val2) == true) {
 				MessageBox.error("Only accept Numbers");
@@ -927,12 +967,6 @@ sap.ui.define([
 			debugger;
 			// var rowval = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.mParameters.newValue;
-
-			if ((val == "") || (val == " ")) {
-				// if (val == " ") {
-				MessageBox.error("Cant make BDC filed as null");
-				return;
-			}
 
 			var val2 = isNaN(val);
 			if ((val2) == true) {
@@ -954,12 +988,6 @@ sap.ui.define([
 			// var rowval = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.mParameters.newValue;
 
-			if ((val == "") || (val == " ")) {
-				// if (val == " ") {
-				MessageBox.error("Cant make BDC filed as null");
-				return;
-			}
-
 			var val2 = isNaN(val);
 			if ((val2) == true) {
 				MessageBox.error("Only accept Numbers");
@@ -979,13 +1007,6 @@ sap.ui.define([
 			debugger;
 			// var rowval = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.mParameters.newValue;
-
-			if ((val == "") || (val == " ")) {
-				// if (val == " ") {
-				MessageBox.error("Cant make BDC filed as null");
-				return;
-			}
-
 			var val2 = isNaN(val);
 			if ((val2) == true) {
 				MessageBox.error("Only accept Numbers");
@@ -1044,11 +1065,16 @@ sap.ui.define([
 
 			}
 		},
-		ChangeSchmeIssue: function (oEvent) {
+		ChangeDocdate: function (oEvent) {
 			debugger;
 			var currentRow = oEvent.getSource().getParent().getIndex();
 			var val = oEvent.getSource().getValue();
-			this.tempjsonenclosure.results[currentRow].doc_dt = val;
+			if ((val == "") || (val == '')) {
+				this.tempjsonenclosure.results[currentRow].doc_dt = null;
+			} else {
+				this.tempjsonenclosure.results[currentRow].doc_dt = val;
+			}
+
 			this.getView().getModel("tableEncl").refresh();
 		},
 		InsertSlno: function (oEvent) {
@@ -1086,6 +1112,47 @@ sap.ui.define([
 				var output = [day, mnth, NewDateform.getFullYear()].join("/");
 			}
 			return output;
+		},
+		OnPressDeleteItem: function (oArg) {
+			debugger;
+			var _self = this;
+			//var filters = new Array();
+
+			_self.slno = oArg.getSource().getParent().getCells()[0].getValue();
+			_self.rowIndex = oArg.getSource().getParent().getIndex();
+
+
+
+			MessageBox.confirm("Changes Cannot be Undone. Do you Really Want to Delete?", {
+				actions: [sap.m.MessageBox.Action.OK, sap.m.MessageBox.Action.CANCEL],
+				onClose: function (oAction) {
+					if (oAction === sap.m.MessageBox.Action.OK) {
+						var mParameters = {};
+						mParameters.groupId = "deleteGroup";
+						mParameters.ETag = "*";
+						// if (_self.tempjsonenclosure.results.length != 0) {
+						// _self.oTrk_Model.remove("/xBRIxI_IMP_TL_RDOC(trkno='" + _self.tempjsonenclosure
+						// 	.results[_self.rowIndex].trkno + "',docno='" + _self.tempjsonenclosure.results[_self.rowIndex].docno +
+						// 	"',sl_no='" + _self.tempjsonenclosure.results[_self.rowIndex].sl_no +
+						// 	"')", mParameters);
+						_self.tempjsonenclosure.results.splice(_self.rowIndex, 1);
+						// }
+
+						_self.oTrk_Model.setDeferredGroups(["deleteGroup"]);
+						_self.oTrk_Model.submitChanges({
+							groupId: "deleteGroup",
+							success: function (oData) {
+								MessageBox.success("Record Deleted Successfully");
+							},
+							error: function (oError) {
+								MessageBox.success("Error while Deleting Successfully");
+							}
+						});
+						_self.getView().getModel("tableEncl").refresh();
+					}
+				}
+			});
+
 		},
 		_OpenBusyDialog: function () {
 			if (!this.bsdalog) {
